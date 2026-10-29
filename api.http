@@ -1,0 +1,63 @@
+### ------------------MEETUPS--------------------
+
+### Recuperar todas las meetups
+GET http://localhost:3000/meetups
+
+
+### Recuperar 1 meetup por su id
+GET http://localhost:3000/meetup/5
+
+
+### Crear una nueva meetup
+POST http://localhost:3000/meetups
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjk2MjYxMzcyLCJleHAiOjE2OTk3MTczNzJ9.v9z_fQI8ZWfzXW5rn-xYiaYKruoAEnFN8BjTCqMuYg0
+
+{
+    "title": "Ruta de senderismo",
+    "description": "Conecta con la naturaleza realizando esta ruta que es apta para todas las edades",
+    "category": "Salud",
+    "city": "Asturias",
+    "date": "2023-10-01T15:30:00Z"
+}
+
+### Borrar una meetup por id
+DELETE http://localhost:3000/meetup/8
+
+
+
+### ------------------USERS--------------------
+
+### Recuperar usuario por token
+
+GET http://localhost:3000/users
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjk2MjYxMzcyLCJleHAiOjE2OTk3MTczNzJ9.v9z_fQI8ZWfzXW5rn-xYiaYKruoAEnFN8BjTCqMuYg0
+
+### Login
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+
+{
+    "email":"julia@email.com",
+    "password":"12345"
+}
+
+### Crear un usuario
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+
+{
+    "email":"rodolfo@email.com",
+    "password":"12345",
+    "name":"Rodolfo",
+    "biography":"Rodolfo García, apasionado chef de Barcelona. Comenzó en cocina familiar y luego recorrió el mundo perfeccionando su arte. Dueño del aclamado restaurante 'Sabor de la Pasión'. Innovador culinario y defensor de la sostenibilidad. Su legado en la gastronomía es insuperable, fusionando tradición y vanguardia.",
+    "avatar":"enlace al avatar"
+}
+
+### Eliminar un usuario
+DELETE http://localhost:3000/users/1
